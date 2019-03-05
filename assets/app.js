@@ -1,9 +1,16 @@
 $(document).ready(function () {
 
-    //I feel like these could probably all have been combined
+    //Let's make some variables: 
+    let chosenEnemy;
+    let chosenPokemon;
+
+    //I feel like these could probably all have been combined, but I didn't do that. 
+    //These are the JQuery onclicks that move the pokemon to the arena once it's been
+    //selected.
     $("#pikachu-button").on("click", function () {
         chosenPokemon = pikachu
         $("#pikachu-figther").appendTo(".container-fluid")
+        $("pikachu-figther").css("float, left")
     });
 
     $("#charmander-button").on("click", function () {
@@ -13,15 +20,13 @@ $(document).ready(function () {
 
     $("#squirtle-button").on("click", function () {
         chosenPokemon = squirtle
-        $("#squirtle-figther").appendTo("..container-fluid")
+        $("#squirtle-figther").appendTo(".container-fluid")
     });
-
-    let chosenEnemy;
-    let chosenPokemon;
 
     $("#meowth-button").on("click", function () {
         chosenEnemy = meowth
         $("#meowth-figther").appendTo(".container-fluid")
+        $("meowth-figther").css("float, right")
     });
 
     $("#wheezing-button").on("click", function () {
@@ -35,10 +40,12 @@ $(document).ready(function () {
     })
 
 
-    //when a user clicks the attack button, userFigther damages opponent
+    //When battle button is pressed, the battle function is called
+    //and takes the arguments of the variables chosenPokemon and chosenEnemy
     $("#battle-button").on("click", function () {
         battle(chosenPokemon, chosenEnemy);
         refresh();
+        isBattleOver(chosenEnemy, chosenPokemon, name);
     });
 
     function refresh() {
@@ -52,52 +59,62 @@ $(document).ready(function () {
 
     // class for Pokemon
     class Pokemon {
-        constructor(hp, ap) {
+        constructor(hp, ap, name) {
             this.hp = hp;
             this.ap = ap;
+            this.name = name;
             this.baseap = ap;
         }
     }
 
     class Enemy extends Pokemon {
-        constructor(hp, ap) {
-            super(hp, ap);
+        constructor(hp, ap, name) {
+            super(hp, ap, name);
         }
     }
 
-    function addStats(pokemon, id) {
-        $(`#${id}-figther > p > #hp`).text(pokemon.hp);
-        $(`#${id}-figther > p > #ap`).text(pokemon.ap);
+    function addStats(pokemon, name) {
+        $(`#${name}-boss > p > #hp`).text(pokemon.hp);
+        $(`#${name}-boss > p > #ap`).text(pokemon.ap);
     }
 
     // Let's make some figthers with variables
-    const meowth = new Enemy(12, 3);
+    const meowth = new Enemy(12, 3, "meowth");
 
+    const wheezing = new Enemy(10, 4, "wheezing");
 
-    const wheezing = new Enemy(10, 4);
+    const wobbuffet = new Enemy(14, 5, "wobbuffet");
 
+    const pikachu = new Pokemon(10, 5, "pikachu");
 
-    const wobbuffet = new Enemy(14, 5);
+    const charmander = new Pokemon(12, 6, "charmander");
 
-    const pikachu = new Pokemon(10, 5);
-
-    const charmander = new Pokemon(12, 6);
-
-    const squirtle = new Pokemon(14, 7);
+    const squirtle = new Pokemon(14, 7, "squirtle");
 
     function battle(pokemon, enemy) {
         enemy.hp -= pokemon.ap
         pokemon.ap += pokemon.baseap
         pokemon.hp -= enemy.ap
 
-
-        //enemy's HP decreases by Pokemon's AP
-        //Pokemon's AP increases by base AP
-        //Pokemon's HP decreases by enemy's AP
-
     }
 
+    //If pokemon or enemy hp is at or below 0, initiate defeat
+    function isBattleOver(chosenEnemy, chosenPokemon, name) {
+        if (chosenEnemy.hp <= 0) {
+            $(`#${name}-figther`).appendTo("#defeated")
+            console.log("Enemy is defeated!")
+        } else {
+            if (chosenPokemon.hp <= 0) {
+                console.log("you're dead")
+                //$(".container-fluid").html("<h1>Game Over</h1>")
+            } else {
+                console.log("Keep going")
+            }
+        }
+    }
     refresh();
+
+    //Pick a new opponent. If 
 
 
 

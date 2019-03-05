@@ -25,26 +25,32 @@
 
 #pikachu-figther {
     background-color: yellow;
+    margin: 10px;
 }
 
 #charmander-figther {
     background-color: orange;
+    margin: 10px;
 }
 
 #squirtle-figther {
     background-color: lightblue;
+    margin: 10px;
 }
 
 #meowth-figther {
     background-color: #b8b894;
+    margin: 10px;
 }
 
 #wheezing-figther {
     background-color: #c275c0;
+    margin: 10px;
 }
 
 #wobbuffet-figther {
     background-color: #7f0099;
+    margin: 10px;
 }
 
 .btn {
@@ -81,3 +87,5 @@
     background-color: darkred;
     font-size: 40px;
 }
+
+
