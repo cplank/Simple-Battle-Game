@@ -1,19 +1,19 @@
 $(document).ready(function () {
 
-    //Maybe some day figure out if these can be combined
+    //I feel like these could probably all have been combined
     $("#pikachu-button").on("click", function () {
         chosenPokemon = pikachu
-        $("#pikachu-figther").appendTo(".arena-box")
+        $("#pikachu-figther").appendTo(".container-fluid")
     });
 
     $("#charmander-button").on("click", function () {
         chosenPokemon = charmander
-        $("#charmander-figther").appendTo(".arena-box")
+        $("#charmander-figther").appendTo(".container-fluid")
     });
 
     $("#squirtle-button").on("click", function () {
         chosenPokemon = squirtle
-        $("#squirtle-figther").appendTo(".arena-box")
+        $("#squirtle-figther").appendTo("..container-fluid")
     });
 
     let chosenEnemy;
@@ -21,17 +21,17 @@ $(document).ready(function () {
 
     $("#meowth-button").on("click", function () {
         chosenEnemy = meowth
-        $("#meowth-figther").appendTo(".arena-box")
+        $("#meowth-figther").appendTo(".container-fluid")
     });
 
     $("#wheezing-button").on("click", function () {
         chosenEnemy = wheezing
-        $("#wheezing-figther").appendTo(".arena-box")
+        $("#wheezing-figther").appendTo(".container-fluid")
     });
 
     $("#wobbuffet-button").on("click", function () {
         chosenEnemy = wobbuffet
-        $("#wobbuffet-figther").appendTo(".arena-box")
+        $("#wobbuffet-figther").appendTo(".container-fluid")
     })
 
 

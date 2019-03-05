@@ -1,8 +1,9 @@
 
-.arena-box {
+.container-fluid {
     border: 1px solid black;
     padding: 20px;
     background-image: url(images/background.jpg);
+    
 }
 
 .attack-box {
@@ -11,11 +12,72 @@
 }
 
 .row {
-    width: 60%;
     margin: 0 auto;
-    background-color: pink;
-}
+    }
 
 .img {
     width: 200px;
+}
+
+#pokemon {
+    background-image: url(images/background2.jpg);
+    }
+
+#pikachu-figther {
+    background-color: yellow;
+}
+
+#charmander-figther {
+    background-color: orange;
+}
+
+#squirtle-figther {
+    background-color: lightblue;
+}
+
+#meowth-figther {
+    background-color: #b8b894;
+}
+
+#wheezing-figther {
+    background-color: #c275c0;
+}
+
+#wobbuffet-figther {
+    background-color: #7f0099;
+}
+
+.btn {
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+#pikachu-button {
+    background-color: rgb(227, 205, 6);
+}
+
+#charmander-button {
+    background-color: #ff6200;
+}
+
+#squirtle-button {
+    background-color: rgb(63, 72, 204);
+}
+
+#meowth-button {
+    background-color: rgb(195, 195, 195);
+}
+
+#wheezing-button {
+    background-color: rgb(149, 191, 21);
+}
+
+#wobbuffet-button {
+    background-color: rgb(138, 62, 138);
+}
+
+#battle-button {
+    background-color: darkred;
+    font-size: 40px;
 }
