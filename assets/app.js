@@ -1,84 +1,108 @@
 $(document).ready(function () {
 
+    //Maybe some day figure out if these can be combined
     $("#pikachu-button").on("click", function () {
-        console.log("You got Pikachu")
+        chosenPokemon = pikachu
         $("#pikachu-figther").appendTo(".arena-box")
-
-        //$(".card").appendTo(".arena-box")
     });
 
     $("#charmander-button").on("click", function () {
-        console.log("You got Charmander")
+        chosenPokemon = charmander
         $("#charmander-figther").appendTo(".arena-box")
     });
 
     $("#squirtle-button").on("click", function () {
-        console.log("You got Squirtle")
+        chosenPokemon = squirtle
         $("#squirtle-figther").appendTo(".arena-box")
     });
 
-    $("#enemy-button").on("click", function () {
-        console.log("You picked an enemy")
-        $("#enemy-figther").appendTo(".arena-box")
+    let chosenEnemy;
+    let chosenPokemon;
+
+    $("#meowth-button").on("click", function () {
+        chosenEnemy = meowth
+        $("#meowth-figther").appendTo(".arena-box")
     });
 
+    $("#wheezing-button").on("click", function () {
+        chosenEnemy = wheezing
+        $("#wheezing-figther").appendTo(".arena-box")
+    });
+
+    $("#wobbuffet-button").on("click", function () {
+        chosenEnemy = wobbuffet
+        $("#wobbuffet-figther").appendTo(".arena-box")
+    })
+
+
+    //when a user clicks the attack button, userFigther damages opponent
+    $("#battle-button").on("click", function () {
+        battle(chosenPokemon, chosenEnemy);
+        refresh();
+    });
+
+    function refresh() {
+        addStats(meowth, "meowth");
+        addStats(wheezing, "wheezing");
+        addStats(wobbuffet, "wobbuffet");
+        addStats(pikachu, "pikachu");
+        addStats(charmander, "charmander");
+        addStats(squirtle, "squirtle");
+    }
+
+    // class for Pokemon
+    class Pokemon {
+        constructor(hp, ap) {
+            this.hp = hp;
+            this.ap = ap;
+            this.baseap = ap;
+        }
+    }
+
+    class Enemy extends Pokemon {
+        constructor(hp, ap) {
+            super(hp, ap);
+        }
+    }
+
+    function addStats(pokemon, id) {
+        $(`#${id}-figther > p > #hp`).text(pokemon.hp);
+        $(`#${id}-figther > p > #ap`).text(pokemon.ap);
+    }
+
+    // Let's make some figthers with variables
+    const meowth = new Enemy(12, 3);
+
+
+    const wheezing = new Enemy(10, 4);
+
+
+    const wobbuffet = new Enemy(14, 5);
+
+    const pikachu = new Pokemon(10, 5);
+
+    const charmander = new Pokemon(12, 6);
+
+    const squirtle = new Pokemon(14, 7);
+
+    function battle(pokemon, enemy) {
+        enemy.hp -= pokemon.ap
+        pokemon.ap += pokemon.baseap
+        pokemon.hp -= enemy.ap
+
+
+        //enemy's HP decreases by Pokemon's AP
+        //Pokemon's AP increases by base AP
+        //Pokemon's HP decreases by enemy's AP
+
+    }
+
+    refresh();
 
 
 
 
 
-
-
-
-    // function attack() {
-    //     //when a user clicks the attack button, userFigther damages opponent
-    //     $(".btn").on("click", function () {
-    //         console.log("Battle is happening");
-    //     })
-    // }
-
-    // function enemyDefeated() {
-    //     //when the enemy figther has health points 0 or below, they move to a different part of the board
-    // }
-
-    // function win() {
-
-    // }
-
-    // function userLose() {
-
-    // }
-
-    //class for Figther
-    // class Fighter {
-    //     constructor(hp, ap) {
-    //         this.hp = hp;
-    //         this.ap = ap;
-    //     }
-    // }
-
-    // class Enemy extends Figther {
-    //     constructor(hp, ap) {
-    //         super(hp, ap);
-    //     }
-    // }
-
-    //class for enemyFigther
-
-    //Let's make some figthers with variables
-    // const figther1 = new Enemy(12, 3);
-
-    // const figther2 = new Enemy(10, 4);
-
-    // const figther3 = new Enemy(14, 5);
-
-    // const figther4 = new Figther(10, 5);
-
-    // const figther5 = new Figther(12, 6);
-
-    // const figther6 = new Figther(14, 7);
-
-    //onclicks!! 
 
 });
 
