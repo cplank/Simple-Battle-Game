@@ -1,0 +1,21 @@
+.jumbotron {
+    background-image: url(images/pokemonGroup.png);
+    background-size: cover;
+}
+
+
+.arena-box {
+    border: 1px solid black;
+    padding: 20px;
+    background-image: url(images/background.jpg);
+}
+
+.attack-box {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.row {
+    width: 60%;
+    margin: 0 auto;
+}
