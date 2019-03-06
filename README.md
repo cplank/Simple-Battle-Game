@@ -34,4 +34,4 @@ several jQuery functions to change HTML element locations, images, and css color
 
 ## Roadmap ##
 
-Eventually, I'd like to add a little celebration if your Pokemon wins (right now nothing happens when you win), and make it so you can't have multiple chosenEnemy's in the arena. 
+Eventually, I'd like to add a little celebration if your Pokemon wins (right now nothing happens when you win), and make it so you can't have multiple chosenEnemy's in the arena. Even more eventually, I'd like to have different attacks based on the Pokemon's element types.
