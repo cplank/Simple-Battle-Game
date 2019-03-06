@@ -12,7 +12,6 @@ $(document).ready(function () {
     $("#pikachu-button").on("click", function () {
         chosenPokemon = pikachu
         $("#pikachu-figther").appendTo(".container-fluid")
-        //$("pikachu-figther").css("float, left")
     });
 
     $("#charmander-button").on("click", function () {
@@ -28,7 +27,6 @@ $(document).ready(function () {
     $("#meowth-button").on("click", function () {
         chosenEnemy = meowth
         $("#meowth-figther").appendTo(".container-fluid")
-        // $("meowth-figther").css("float, right")
     });
 
     $("#wheezing-button").on("click", function () {
