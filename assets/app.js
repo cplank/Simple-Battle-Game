@@ -66,17 +66,17 @@ $(document).ready(function () {
 
     // Let's make some figthers with variables. These variables are either Pokemon or Enemy, and 
     //their parameters are stored in the variables of their class. 
-    const meowth = new Enemy(10, 1, "meowth");
+    const meowth = new Enemy(20, 2, "meowth");
 
-    const wheezing = new Enemy(8, 2, "wheezing");
+    const wheezing = new Enemy(18, 4, "wheezing");
 
-    const wobbuffet = new Enemy(7, 4, "wobbuffet");
+    const wobbuffet = new Enemy(17, 5, "wobbuffet");
 
-    const pikachu = new Pokemon(17, 1, "pikachu");
+    const pikachu = new Pokemon(27, 2, "pikachu");
 
-    const charmander = new Pokemon(15, 2, "charmander");
+    const charmander = new Pokemon(22, 3, "charmander");
 
-    const squirtle = new Pokemon(10, 4, "squirtle");
+    const squirtle = new Pokemon(24, 4, "squirtle");
 
     //A single function that updates all of the variables on the HTML side (in this case, only
     //HP and AP). This function takes the parameters pokemon and name, which are declared in the class
