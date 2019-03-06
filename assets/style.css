@@ -88,4 +88,16 @@
     font-size: 40px;
 }
 
+#hp {
+    font-size: 20px;
+}
+
+#ap {
+    font-size: 20px;
+}
+
+.card-text {
+    font-size: 20px;
+}
+
 
