@@ -20,26 +20,27 @@
 
 
 <body>
-    <div id="pokemon" class="row text-center">
-        <div class="col-sm-4">
+    <div id="pokemon-box" class="pokemon row text-center">
+        <div id="pikachu-holding" class="col-sm-4">
             <div id="pikachu-figther" class="card figther" style="width: 15rem; display: inline-block;">
                 <div id="pikachu-boss" class="card-body text-center">
-                    <img class="card-img-top" src="assets/images/pikachu2.png" alt="Card image cap">
+                    <img id="pikachu-image" class="card-img-top" src="assets/images/pikachu2.png" alt="Card image cap">
                     <h5 class="card-title">Pikachu</h5>
                     <p class="card-text">
                         HP:<span id="hp">20</span>
                         <br>
                         AP:<span id="ap">4</span>
                     </p>
-                    <button id="pikachu-button" class="btn btn-primary number">I choose you,
+                    <button id="pikachu-button" class="btn btn-primary">I choose you,
                         Pikachu!</button>
                 </div>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div id="charmander-holding" class="col-sm-4">
             <div id="charmander-figther" class="card figther" style="width: 15rem; display: inline-block;">
                 <div id="charmander-boss" class="card-body">
-                    <img class="card-img-top" src="assets/images/charmander.png" alt="Card image cap">
+                    <img id="charmander-image" class="card-img-top" src="assets/images/charmander.png"
+                        alt="Card image cap">
                     <h5 class="card-title">Charmander</h5>
                     <p class="card-text">
                         HP:<span id="hp">10</span>
@@ -51,10 +52,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div id="squirtle-holding" class="col-sm-4">
             <div id="squirtle-figther" class="card figther" style="width: 15rem; display: inline-block;">
                 <div id="squirtle-boss" class="card-body">
-                    <img class="card-img-top" src="assets/images/squirtle2.png" alt="Card image cap">
+                    <img id="squirtle-image" class="card-img-top" src="assets/images/squirtle2.png"
+                        alt="Card image cap">
                     <h5 class="card-title">Squirtle</h5>
                     <p class="card-text">
                         HP:<span id="hp">15</span>
@@ -87,57 +89,49 @@
         </div>
     </div>
 
-    <div id="pokemon" class="row text-center">
-        <div class="col-sm-4">
+    <div class="pokemon row text-center">
+        <div id="meowth-holding" class="col-sm-4">
             <div id="meowth-figther" class="card figther" style="width: 15rem; display: inline-block;">
                 <div id="meowth-boss" class="card-body">
-                    <img class="card-img-top" src="assets/images/Meowth_anime.png" alt="Card image cap">
+                    <img id="meowth-image" class="card-img-top" src="assets/images/Meowth_anime.png"
+                        alt="Card image cap">
                     <h5 class="card-title">Meowth</h5>
                     <p class="card-text">
                         HP:<span id="hp">20</span>
                         <br>
                         AP:<span id="ap">8</span>
                     </p>
-                    <button id="meowth-button" class="btn btn-primary number"><span>Bring it!</span></button>
+                    <button id="meowth-button" class="btn btn-primary"><span>Bring it!</span></button>
                 </div>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div id="wheezing-holding" class="col-sm-4">
             <div id="wheezing-figther" class="card figther" style="width: 15rem; display: inline-block;">
                 <div id="wheezing-boss" class="card-body text-center">
-                    <img class="card-img-top" src="assets/images/wheezing.png" alt="Card image cap">
+                    <img id="wheezing-image" class="card-img-top" src="assets/images/wheezing.png" alt="Card image cap">
                     <h5 class="card-title">Wheezing</h5>
                     <p class="card-text">
                         HP:<span id="hp">25</span>
                         <br>
                         AP:<span id="ap">5</span>
                     </p>
-                    <button id="wheezing-button" class="btn btn-primary number"><span>Bring it!</span></button>
+                    <button id="wheezing-button" class="btn btn-primary"><span>Bring it!</span></button>
                 </div>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div id="wobbuffet-holding" class="col-sm-4">
             <div id="wobbuffet-figther" class="card figther" style="width: 15rem; display: inline-block;">
                 <div id="wobbuffet-boss" class="card-body">
-                    <img class="card-img-top" src="assets/images/Wobbuffet2.png" alt="Card image cap">
+                    <img id="wobbuffet-image" class="card-img-top" src="assets/images/Wobbuffet2.png"
+                        alt="Card image cap">
                     <h5 class="card-title">Wobbuffet</h5>
                     <p class="card-text">
                         HP:<span id="hp">35</span>
                         <br>
                         AP:<span id="ap">4</span>
                     </p>
-                    <button id="wobbuffet-button" class="btn btn-primary number"><span>Bring it!</span></button>
+                    <button id="wobbuffet-button" class="btn btn-primary"><span>Bring it!</span></button>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="defeated-box">
-        <div class="row">
-            <div class="col-md-12">
-                <span id="defeated">
-                    This is where defeated opponents go.
-                </span>
             </div>
         </div>
     </div>

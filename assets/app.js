@@ -10,7 +10,7 @@ $(document).ready(function () {
     $("#pikachu-button").on("click", function () {
         chosenPokemon = pikachu
         $("#pikachu-figther").appendTo(".container-fluid")
-        $("pikachu-figther").css("float, left")
+        //$("pikachu-figther").css("float, left")
     });
 
     $("#charmander-button").on("click", function () {
@@ -26,7 +26,7 @@ $(document).ready(function () {
     $("#meowth-button").on("click", function () {
         chosenEnemy = meowth
         $("#meowth-figther").appendTo(".container-fluid")
-        $("meowth-figther").css("float, right")
+        // $("meowth-figther").css("float, right")
     });
 
     $("#wheezing-button").on("click", function () {
@@ -45,7 +45,7 @@ $(document).ready(function () {
     $("#battle-button").on("click", function () {
         battle(chosenPokemon, chosenEnemy);
         refresh();
-        isBattleOver(chosenEnemy, chosenPokemon, name);
+        isBattleOver(chosenEnemy, chosenPokemon);
     });
 
     function refresh() {
@@ -79,7 +79,7 @@ $(document).ready(function () {
     }
 
     // Let's make some figthers with variables
-    const meowth = new Enemy(12, 3, "meowth");
+    const meowth = new Enemy(12, 10, "meowth");
 
     const wheezing = new Enemy(10, 4, "wheezing");
 
@@ -99,22 +99,41 @@ $(document).ready(function () {
     }
 
     //If pokemon or enemy hp is at or below 0, initiate defeat
-    function isBattleOver(chosenEnemy, chosenPokemon, name) {
+    function isBattleOver(chosenEnemy, chosenPokemon) {
         if (chosenEnemy.hp <= 0) {
-            $(`#${name}-figther`).appendTo("#defeated")
+            $(`#${chosenEnemy.name}-figther`).appendTo($(`#${chosenEnemy.name}-holding`))
+            $(`#${chosenEnemy.name}-figther`).css("background-color", "#666699");
+            $(`#${chosenEnemy.name}-button`).hide()
+            $(`#${chosenEnemy.name}-image`).attr("src", "assets/images/pokeball.png");
             console.log("Enemy is defeated!")
-        } else {
-            if (chosenPokemon.hp <= 0) {
-                console.log("you're dead")
-                //$(".container-fluid").html("<h1>Game Over</h1>")
-            } else {
-                console.log("Keep going")
+        }
+        if
+            (chosenPokemon.hp <= 0) {
+            $(`#${chosenPokemon.name}-figther`).css("background-color", "#ffff1a");
+            $(`#${chosenPokemon.name}-button`).hide()
+            $("#battle-button").hide()
+            $(`#${chosenPokemon.name}-image`).attr("src", "assets/images/vacaypokeball.png");
+            $(`#${chosenPokemon.name}-holding`).html("<img src='assets/images/misty.png' style='width: 667px; height: 500px;'>")
+            console.log("you're dead")
+
+            if (chosenPokemon === charmander) {
+                $("#pikachu-holding").hide();
+                $("#squirtle-holding").hide();
+            }
+            if (chosenPokemon === squirtle) {
+                $("#pikachu-holding").hide();
+                $("#charmander-holding").hide();
+            }
+            if (chosenPokemon === pikachu) {
+                $("#squirtle-holding").hide();
+                $("#charmander-holding").hide();
             }
         }
     }
+
     refresh();
 
-    //Pick a new opponent. If 
+
 
 
 
