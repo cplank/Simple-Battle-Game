@@ -76,7 +76,7 @@ $(document).ready(function () {
 
     const charmander = new Pokemon(22, 3, "charmander");
 
-    const squirtle = new Pokemon(24, 4, "squirtle");
+    const squirtle = new Pokemon(20, 4, "squirtle");
 
     //A single function that updates all of the variables on the HTML side (in this case, only
     //HP and AP). This function takes the parameters pokemon and name, which are declared in the class
