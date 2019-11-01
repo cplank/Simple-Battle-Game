@@ -1,4 +1,4 @@
-# Unit-4-Game
+# Simple-Game
 https://cplank.github.io/Simple-Battle-Game/
 A short battle game between Pokemon 
 
